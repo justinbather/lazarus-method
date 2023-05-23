@@ -1,0 +1,195 @@
+body {
+    background-color: #BFC1C2;
+    font-family: 'Futura PT';
+}
+
+.main_container {
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .login_container {
+    padding-top: 50px;
+  }
+  
+  
+  
+  
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 40px  #BFC1C2 inset !important; 
+      
+  }
+  input:-webkit-autofill {
+      -webkit-text-fill-color: white;
+  }
+
+  .password_input, .username_input {
+    font-family: 'Futura PT';
+    font-weight: 400;
+    color: #FFFFFF;
+    
+
+  }
+
+  .input_boxes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input_boxes input {
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 18px;
+    background-color: #BFC1C2;
+    outline: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: white;
+    border-color: #FFFFFF;
+    
+  }
+  
+  .login_container {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+
+  .login_container h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #202562;
+    margin-bottom: 0;
+    padding-bottom: -20px;
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+
+  }
+
+  .login_container h3 {
+    font-size: 1.5rem;
+    color: #FFF;
+    font-weight: 400;
+    padding-left: 0px;
+    padding-top: -20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+  }
+
+  .login_container button {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 75px;
+    background-color: #202562;
+    border: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  .login_container button:hover {
+    background-color: #202562;
+    opacity: 0.8;
+  }
+
+  .login_container .forgot_password_link {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    padding-left: 0px;
+    padding-top: 10px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+  }
+
+  .login_container .forgot_password_link:hover {
+    color: lightgray;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .login_container hr {
+    margin-top: 50%;
+
+  }
+
+  .login_container .dont_have_account {
+    margin-top: 10px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .login_container .dont_have_account a {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-size: 25px;
+    font-weight: 400;
+    padding-left: 0;
+    padding-top: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0px;
+    color: #202562;
+  }
+
+  .login_container .dont_have_account a:hover {
+    color: #202562;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .login_container .dont_have_account button {
+    margin-bottom: 0;
+    margin-left: 0px;
+    width: 40%;
+    height: 50px;
+    background-color: #202562;
+    border: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    outline: 0;
+    cursor: pointer;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .login_container {
+      margin: 0 auto;
+      align-content: center;
+      width: 80vw;
+    }
+
+    .login_container h1 {
+      font-size:calc(100% + 6vw);
+    }
+    
+    .login_container h3 {
+      font-size:calc(95% + .5vw);
+      overflow: visible;
+    }
+
+
+  }

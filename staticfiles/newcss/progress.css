@@ -1,0 +1,207 @@
+body {
+    background-color: #BFC1C2;
+    overflow: hidden;
+    position: relative;
+}
+
+hr {
+    width: 75%;
+  }
+
+.navbar_container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 83px;
+    height: 100vh; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #FFF;
+    z-index: 2;
+  }
+
+.navbar_container li a {
+    display: block;
+    color: #FFF;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-right: 2px;
+  }
+
+.navbar_container li a:hover {
+    background-color: #424242;
+  }
+
+.navbar_container ul li:last-child {
+    margin-top: auto;
+    margin-bottom: 15px;
+  }
+
+.title {
+    display: flex;
+    padding-left: 84px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+    flex-direction: column;
+    
+  }
+
+.title h1 {
+    font-family: 'Futura PT';
+    font-weight: 400;
+    color: #FFF;
+    font-size: 60px;
+    padding: 0;
+    margin: 0;
+    line-height: 70px;
+}
+
+.title h3 {
+  font-family: 'Futura PT';
+  font-weight: 400;
+  color: #FFF;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 5px;
+  padding-left: 9px;
+}
+
+
+.chart-container {
+  padding-top: 10px;
+  position: relative;
+  height: 600px !important;
+  align-items: center;
+  z-index: 1;
+}
+  
+.selectBox {
+  display: flex;
+    padding-left: 84px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+ 
+
+
+  .exit-icon, .hamb-icon {
+    visibility: hidden;
+    display: none;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+  
+    .exit-icon {
+      visibility: hidden;
+    }
+    
+
+    .title {
+      padding-left: 0px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .chart-container {
+      height: 400px !important;
+      padding-left: 0px;
+    }
+
+.selectBox {
+padding-left: 0px;
+}
+    
+   
+
+    .navbar_container ul {
+      display: none; /* Hide navbar by default */
+    }
+  
+  .navbar_container.show ul {
+    display: flex; /* Show navbar when hamburger icon is clicked */
+  }
+  
+  .navbar_container.show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+  }
+  
+  .navbar_container.show ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar_container.show ul li {
+    margin: 20px 0;
+  }
+  
+  .navbar_container.show li a {
+    font-size: 1.2rem;
+    color: #FFF;
+    text-align: center;
+  }
+  
+  .hamb-icon {
+    visibility: visible;
+    color:#FFFFFF;
+    display: block;
+    position:fixed;
+    top: 10px;
+    left: 15px;
+    border-radius: 20px;
+    width: 60px;
+  }
+  
+  .navbar_container.show .exit-icon {
+    visibility: visible;
+    color:#FFFFFF;
+    display: block;
+    position:fixed;
+    top: 10px;
+    left: 15px;
+    border-radius: 20px;
+    width: 60px;
+  }
+  
+  .navbar_container.show .hamb-icon {
+    visibility: hidden;
+    display: none;
+  }
+  
+  .navbar_container.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Use rgba for transparency */
+    z-index: 998; /* Lower z-index than navbar to prevent overlay from covering it */
+    display: none; /* Hide the overlay by default */
+  }
+  
+  .navbar_container.show.overlay {
+    display: block; /* Show the overlay when hamburger icon is clicked */
+    opacity: 1;
+  }
+   
+  }
