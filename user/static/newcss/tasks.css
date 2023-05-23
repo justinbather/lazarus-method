@@ -1,0 +1,464 @@
+body {
+    background-color: #BFC1C2;
+}
+
+hr {
+    width: 75%;
+  }
+
+.navbar_container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 83px;
+    height: 100vh; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #FFF;
+  }
+
+  .hamb-icon, .exit-icon {
+    color:#FFFFFF;
+    display: block;
+    position:fixed;
+    top: 10px;
+    left: 19px;
+    border-radius: 20px;
+    width: 60px;
+    visibility: hidden;
+
+  }
+
+.navbar_container li a {
+    display: block;
+    color: #FFF;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-right: 2px;
+  }
+
+.navbar_container li a:hover {
+    background-color: #424242;
+  }
+
+.navbar_container ul li:last-child {
+    margin-top: auto;
+    margin-bottom: 15px;
+  }
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 84px;
+    flex-direction: column;
+  }
+
+.title h1 {
+    font-family: 'Futura PT';
+    font-weight: 400;
+    color: #202562;
+    font-size: 60px;
+    padding: 0;
+    margin: 0;
+    line-height: 70px;
+}
+
+.title h3 {
+    font-family: 'Futura PT';
+    font-size: 1.5rem;
+    color: #FFF;
+    font-weight: 400;
+    padding-left: 0px;
+    padding-top: -20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+}
+
+.hands-picture {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 20px 84px;
+   
+}
+
+.tasks {
+    padding: 0;
+    margin: 0;
+    font-family: 'Futura PT';
+    font-size: 20px;
+  }
+  
+.tasks-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #FFF;
+  }
+
+.tasks-container li:has(input[type="checkbox"]:checked) {
+  background-color: #202562;
+  opacity: 50%;
+  color: white;
+}
+  
+.tasks-container ul {
+    list-style-type: none;
+    padding-left: 84px;
+    margin: 0;
+  }
+  
+.tasks-container li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    cursor: pointer;
+    padding-left: 60px !important;
+    text-align: center;
+  }
+  
+.tasks-container li input[type="checkbox"] {
+    position: absolute;
+    left:-1000px;
+    opacity: 0;
+  }
+  
+.tasks-container li label {
+    margin: 0;
+    text-align: center;
+    
+    padding-right: 50px;
+    
+  }
+
+.tasks-container li #text {
+  padding-left: 100px;
+}
+
+.tasks-container li:hover {
+    background-color: #424242;
+  }
+
+.line {
+    padding-left: 84px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.completed-tasks {
+    padding: 0;
+    margin: 0;
+    font-family: 'Futura PT';
+    font-size: 20px;
+  }
+  
+.completed-tasks-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #FFF;
+  }
+  
+.completed-tasks-container ul {
+    list-style-type: none;
+    padding-left: 84px;
+    margin: 0;
+  }
+  
+.completed-tasks-container li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: line-through;
+    padding-left: 60px;
+  }
+  .completed-tasks-container li:has(input[type="checkbox"]:checked) {
+    background-color: rgb(118, 13, 13);
+    opacity: 50%;
+    color: white;
+  }
+  
+.completed-tasks-container li input[type="checkbox"] {
+    position: absolute;
+    left: 15px;
+    opacity: 0;
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+  
+.completed-tasks-container li label {
+    margin: 0 auto;
+    text-align: center;
+    padding-right: 50px;
+
+  }
+
+.completed-tasks-container li:hover {
+    background-color: #424242;
+}
+
+.mark-done-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 84px;
+    margin-top: 40px;
+  }
+
+.mark-done-button button {
+    background-color: #202562;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0px;
+    color: #FFF;
+    cursor: pointer;
+  }
+
+.continue-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 84px;
+    margin-top: 40px;
+  
+}
+
+.continue-button button {
+  background-color: #202562;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.continue-button button:hover {
+  background-color: #202562;
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+.mark-done-button button:hover {
+    background-color: #202562;
+}
+
+.mark-done-button button:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+  }
+
+.onboarding-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #FFF;
+ }
+  
+.onboarding-container ul {
+    list-style-type: none;
+    margin: 0;
+}
+  
+.onboarding-container li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: line-through;
+    padding-left: 60px;
+  }
+
+  .onboarding-container li:has(input[type="checkbox"]:checked) {
+    background-color: rgb(17, 103, 17);
+    opacity: 50%;
+    color: white;
+    opacity: 0;
+  }
+  
+.onboarding-container li input[type="checkbox"] {
+    position: absolute;
+    left: 15px;
+    
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+  
+.onboarding-container li label {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+.onboarding-container li:hover {
+    background-color: #424242;
+}
+
+.progress {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+@media only screen and (max-width: 600px) {
+
+  
+  .continue-button {
+    padding-left: 0;
+    padding-bottom: 30px;
+  }
+
+  .continue-button button {
+    width: 90%;
+    height: 80px;
+  }
+
+  .title h3 {
+    font-size:calc(95% + .5vw);
+    overflow: visible;
+  }
+
+  .completed-tasks-container li, .tasks-container li {
+    width: 70vw;
+  }
+
+  .mark-done-button button {
+    width: 60vw;
+  }
+
+  .exit-icon {
+    visibility: hidden;
+  }
+
+  .title {
+    padding-left: 0px;
+  }
+
+  .tasks-container ul, .completed-tasks-container ul {
+    padding-left: 0px;
+  }
+
+
+  .hands-picture {
+    padding-left: 0px;
+  }
+
+  .mark-done-button {
+    padding-left: 0px;
+  }
+
+  .line {
+    padding-left: 0px;
+  }
+
+  .navbar_container ul {
+    display: none; /* Hide navbar by default */
+  }
+
+.navbar_container.show ul {
+  display: flex; /* Show navbar when hamburger icon is clicked */
+}
+
+.navbar_container.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.navbar_container.show ul {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar_container.show ul li {
+  margin: 20px 0;
+}
+
+.navbar_container.show li a {
+  font-size: 1.2rem;
+  color: #FFF;
+  text-align: center;
+}
+
+.hamb-icon img {
+  visibility: visible;
+  color:#FFFFFF;
+  display: block;
+  position:fixed;
+  top: 10px;
+  left: 15px;
+  border-radius: 20px;
+  width: 60px;
+}
+
+.navbar_container.show .exit-icon {
+  visibility: visible;
+  color:#FFFFFF;
+  display: block;
+  position:fixed;
+  top: 667px;
+  left: 15px;
+  border-radius: 20px;
+  width: 60px;
+}
+
+.navbar_container.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Use rgba for transparency */
+  z-index: 998; /* Lower z-index than navbar to prevent overlay from covering it */
+  display: none; /* Hide the overlay by default */
+}
+
+.navbar_container.show.overlay {
+  display: block; /* Show the overlay when hamburger icon is clicked */
+  opacity: 1;
+}
+}

@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="../static/newcss/progress.css">
+    <div class="navbar">
+        <div class="navbar_container">
+            <a class="hamb-icon"><img src="../static/images/icons8-menu-rounded-50.png"/></a>
+            <ul>
+                <li><a href="../profile"><img src="../static/images/ProfileIcon.png" /></a></li>
+                <hr>
+                <li><a href="../home"><img src="../static/images/HomeIcon.png" /></a></li>
+                <hr>
+                <li><a href="../progress"><img src="../static/images/progressicon.png" /></a></li>
+                <hr>
+                <li><a href="../logout"><img src="../static/images/logout.png"></a></li>
+            </ul>
+            <div class="overlay"></div>
+          <a class="exit-icon"><img src="../static/images/icons8-close-window-50.png"/></a>
+        </div>
+    </div>
+    <script>
+    const menuIcon = document.querySelector('.hamb-icon');
+    const exitIcon = document.querySelector('.exit-icon');
+    const navbar = document.querySelector('.navbar_container');
+    const overlay = document.querySelector('.overlay');
+
+    menuIcon.addEventListener('click', () => {
+    navbar.classList.add('show');
+    overlay.classList.add('show');
+    });
+
+    exitIcon.addEventListener('click', () => {
+    navbar.classList.remove('show');
+    overlay.classList.remove('show');
+    });
+    </script>
+  <div class="title">
+      <h1>Progress</h1>
+      <h3>Category scores are updated after each belt.</h3>
+  </div>
+  <div class="chart-container" >
+      <canvas class="polar-chart" id="polar-chart" ></canvas>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  {% if request.user.program == 'Personalized Pathfinder' or 'Elite Transformation Journey'%}
+  <div class="selectBox">
+    <select id="scoreDropdown">
+      <option value="{{data_none}}">Onboarding</option>
+      <option value="{{data_white}}">White</option>
+      <option value="{{data_yellow}}">Yellow</option>
+      <option value="{{data_green}}">Green</option>
+      <option value="{{data_blue}}">Blue</option>
+      <option value="{{data_orange}}">Orange</option>
+      <option value="{{data_purple}}">Purple</option>
+      <option value="{{data_test1}}">Test Result 1</option>
+      <option value="{{data_test2}}">Test Result 2</option>
+    </select>
+  </div>
+  <script>
+ 
+   
+
+    var config = {
+      type: 'polarArea',
+      data: {
+        datasets: [
+          {
+          data: {{ data_none|safe}},
+          label: 'Score',
+          fill: true,
+          backgroundColor: ["rgba(252, 0, 0, 0.5)", "rgba(0, 227, 0, 0.5)", "rgba(100, 50, 182, 0.5)", "rgba(0, 200, 10, 0.5)"
+        , "rgba(252, 227, 182, 0.5)", "rgba(252, 227, 182, 0.5)", "rgba(252, 227, 182, 0.5)"], 
+          borderColor: "rgba(252, 227, 182, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, .1)"
+                  },
+                 
+                  
+                ],
+        labels: {{ labels_none|safe }}
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        devicePixelRatio: 4,
+        scales: {
+      r: {
+        pointLabels: {
+          display: true,
+          centerPointLabels: true,
+          font: {
+            size: 18
+          }
+        }
+      }
+    },
+        
+        legend: {
+          display: false
+                },
+         borderWidth: 10,
+          scale: {
+            angleLines: {
+                "color": "white"
+                        },
+            ticks: {
+              maxTicksLimit: 2,
+              backdropColor: "rgba(0, 0, 0, 0)",
+              fontSize: 18,
+              max: 10
+        
+      },
+      gridLines: {
+        display: true,
+        lineWidth: 2,
+        color: "white"
+      },
+      pointLabels: {
+        fontSize: 18,
+        fontStyle: "bold",
+        color: "white",
+        centerPointLabels: true,
+        display:true
+      }
+    }  
+        
+    },
+};
+
+var scoreDropdown = document.getElementById('scoreDropdown');
+  scoreDropdown.addEventListener('change', scoreSelector);
+function scoreSelector() {
+  config.data.datasets.splice(0, 1);
+  var newData = scoreDropdown.value.slice(1,-1);
+  config.data.datasets[0].data = newData.split(".")
+
+  window.myChart.update();
+  config.data = {
+        datasets: [
+          {
+          data: newData.split(","),
+          label: 'Score',
+          
+                  },
+                 
+                  
+                ],
+        labels: {{ labels_test1|safe }}
+      },
+
+  window.myChart.update();
+  console.log(config.data.datasets[0].data)
+  console.log(config.data.labels)
+
+  
+  }
+
+    window.onload = function() {
+      var ctx = document.getElementById('polar-chart').getContext('2d');
+      window.myChart = new Chart(ctx, config);
+    };
+
+    
+
+  </script>
+{% endif %}
+
+
+
+{% if request.user.program == "Wellness Explorer"%}
+<script>
+
+   
+
+var config = {
+      type: 'radar',
+      data: {
+        datasets: [
+          {
+          data: {{ data_none|safe }},
+          label: 'Onboarding Score',
+          fill: true,
+          backgroundColor: "rgba(252, 227, 182, 0.5)",
+          borderColor: "rgba(252, 227, 182, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, .1)"
+                  },
+                  {
+          data: {{ data_white|safe }},
+          label: 'White Belt',
+          fill: true,
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          borderColor: "rgba(255, 255, 255, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, .1)"
+                  },
+                  {
+          data: {{ data_yellow|safe }},
+          label: 'Yellow Belt',
+          fill: true,
+          backgroundColor: "rgba(255, 255, 0, 0.5)",
+          borderColor: "rgba(255, 255, 0, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, .1)"
+                  },
+                  {
+          data: {{ data_green|safe }},
+          label: 'Green Belt',
+          fill: true,
+          backgroundColor: "rgba(0, 255, 0, 0.5)",
+          borderColor: "rgba(0, 255, 0, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(0, 227, 0, .1)"
+                  },
+                  {
+          data: {{ data_blue|safe }},
+          label: 'Blue Belt',
+          fill: true,
+          backgroundColor: "rgba(0, 0, 255, 0.5)",
+          borderColor: "rgba(0, 0, 255, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(0, 0, 255, .1)"
+                  },
+                  {
+          data: {{ data_orange|safe }},
+          label: 'Orange Belt',
+          fill: true,
+          backgroundColor: "rgba(255, 165, 0, 0.5)",
+          borderColor: "rgba(255, 165, 0, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, .1)"
+                  },
+                  {
+          data: {{ data_purple|safe }},
+          label: 'Purple Belt',
+          fill: true,
+          backgroundColor: "rgba(221,160,221, 0.5)",
+          borderColor: "rgba(221,160,221, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, .1)"
+                  },
+                
+                
+
+                
+              ],
+      labels: {{ labels_none|safe }}
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+  devicePixelRatio: 4,
+  legend: {
+    display: true
+  },
+  borderWidth: 10,
+  scale: {
+      angleLines: {
+              "color": "white"
+          },
+    ticks: {
+      maxTicksLimit: 1,
+      backdropColor: "rgba(0, 0, 0, 0)",
+      fontSize: 18,
+      max: 10
+      
+    },
+    gridLines: {
+      lineWidth: 2,
+      color: "white"
+    },
+    pointLabels: {
+      fontSize: 18,
+      fontStyle: "bold",
+      color: "white",
+    }
+  }  
+      
+  },
+};
+
+
+  window.onload = function() {
+    var ctx = document.getElementById('radar-chart').getContext('2d');
+    window.myPie = new Chart(ctx, config);
+  };
+
+</script>
+{% endif %}
+
+
+{% endblock %}
+

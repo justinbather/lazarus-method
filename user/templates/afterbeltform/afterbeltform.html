@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<body>
+<!--
+    <div class="login_container">
+        <h1>Congratulations!</h1>
+        <h3>You've completed your belt!</h3>
+        <p>Please answer the following questions.</p>
+        <p>Leave blank if false, check off if true.</p>
+        <form method="POST">
+            {% csrf_token %}
+            {% for question in question_list %}
+            
+                
+                    <li class="task_text"><input type="checkbox" name="question_true" id="{{ question.id }}" value="{{question.id}}"> {{question.question}} </li>
+                
+            
+            {% endfor %}
+            <br>
+            <br>
+            <br>
+            <div class="buttons">
+                <button class="continue_button" name="save" method="POST" > Continue </button>
+            </div>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </form>
+    </div>
+</body>
+-->
+
+<body>
+    <link rel="stylesheet" href="../static/newcss/tasks.css">
+    <div class="navbar">
+        <div class="navbar_container">
+            <ul>
+                <li><a href="../home"><img src="../static/images/ProfileIcon.png" /></a></li>
+                <hr>
+                <li><a href="../home"><img src="../static/images/HomeIcon.png" /></a></li>
+                <hr>
+                <li><a href="../progress"><img src="../static/images/progressicon.png" /></a></li>
+                <li><a href="./logout"><img src="../static/images/logout.png"></a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1>Congratulations</h1>
+            <h3>Please check off any that are true!</h3>
+        </div>
+        <!--<div class="hands-picture">
+            <img src="../static/images/ChallengeIcon.svg" alt="Challenge Icon">
+        </div>-->
+        <div class="tasks">
+            <form method="post">
+                {% csrf_token %}
+            <div class="tasks-container">
+                <ul>
+                    {% for question in question_list|slice:':10' %}
+                    <li>
+                        <label type="checkbox" for="{{question.id}}">
+                            <input type="checkbox" id="{{question.id}}" name="question_true" value="{{question.id}}">
+                            {{question.question}}
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="line">
+            <hr>
+        </div>
+        
+        <div class="mark-done-button">
+            <button method="post" name="save">Continue</button>
+        </div>
+        </form>
+    </div>
+
+
+   
+</body>
+
+
+{% endblock %}
+

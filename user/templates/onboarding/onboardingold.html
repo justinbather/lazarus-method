@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+<body>
+    
+   <!-- <br>
+    <div class="login_container">
+        <form method="post" >
+            {% csrf_token %}
+            
+        
+            {{ form.non_field_errors }}
+        
+            {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field.errors }}
+            {{ hidden_field }}
+            {% endfor %}
+        
+            <div class="input_boxes">
+            {% for field in form.email %}
+                
+                
+                    
+                    {{ field.errors }}
+                    {{field}}
+                        
+                    
+                    {{ field.help_text }}
+                
+            {% endfor %}
+            </div>
+            <div class="input_boxes">
+                {% for field in form.password %}
+               
+                    {{ field.errors }}
+                    {{ field }}
+                    {{ field.help_text }}
+                    
+                {% endfor %}
+            </div>
+            
+            <div class="login_text">
+                <p class="forgot_password">
+                    <a class="have_account_text" href="#">Forgot your password?</a>
+                </p>
+            </div>
+            <div class="buttons">
+                <button method="post" class="continue_button" type="submit" value="Log in">Sign in</button>
+            
+        </form>
+     </div>
+     <div class="login_text">
+        <p class="horizontal_line">
+            <hr>
+        </p>
+    </div>
+    <div class="login_text">
+        <p class="sign_up">
+            <h3 class="new_here_text">New here?</h3>
+        </p>
+    </div>
+    <div class="buttons">
+            <button class="get_started_button" onclick="location.href = '../signup'" type="submit" id="createAccountLink">Get started</button>
+    </div>    -->
+
+    <div class="signup_container">
+        <div>
+            <h3 class="signup_text">Please check off all that are true.</h3>
+        </div>
+       <form method="POST">
+            {% csrf_token %}
+            <!--{{ form }}-->
+            {{ form.non_field_errors }}
+        
+            {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field.errors }}
+            {{ hidden_field }}
+            {% endfor %}
+        
+            <div>
+                {% for field in form.q1_r %}
+                    
+                    {{ field.errors }}
+                    {{ field }}
+                    {{ form.q1_r.label }}  
+                    {{ field.help_text }}
+                
+                {% endfor %}
+            </div>
+            <br>
+            <div>
+                {% for field in form.q2_r %}
+                    
+                    {{ field.errors }}
+                    {{ field }}
+                    {{ form.q2_r.label }}  
+                    {{ field.help_text }}
+                
+                {% endfor %}
+            </div>
+            <br>
+            <div>
+                {% for field in form.q3_r %}
+                    
+                    {{ field.errors }}
+                    {{ field }}
+                    {{ form.q3_r.label }}  
+                    {{ field.help_text }}
+                
+                {% endfor %}
+            </div>
+            <br>
+            <div>
+                {% for field in form.q4_r %}
+                    
+                    {{ field.errors }}
+                    {{ field }}
+                    {{ form.q4_r.label }}  
+                    {{ field.help_text }}
+                
+                {% endfor %}
+            </div>
+            <br>
+            <div>
+                {% for field in form.q5_r %}
+                    
+                {{ field.errors }}
+                {{ field }}
+                {{ form.q5_r.label }}  
+                {{ field.help_text }}
+            
+            {% endfor %}
+            <br>
+            <br>
+            <br>
+
+            </div>
+            <button class="get_started_button" type="submit" method="POST"> Submit</button>
+        </form>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    {% endblock %}  
+</body>
+</html>

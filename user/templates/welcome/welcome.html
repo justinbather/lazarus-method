@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+
+<body>
+    
+    {% block content %}
+    <link rel="stylesheet" href="../static/newcss/welcome.css">
+    <div class="main-container">
+        <div>
+            <h1> Welcome to the Lazarus Method </h1>
+        </div>
+        <div> 
+            <h3>Before you get started we need you to answer some questions</h3>
+        </div>
+        <div> 
+            <p >Please select the following which are true</p>
+        </div>
+        <div>
+            <button method="POST" onclick="location.href = '../onboarding'" type="submit"> Continue</button>
+        </div>
+    </div>
+    {% endblock %}
+</body>

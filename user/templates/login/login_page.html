@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block header %}
+<head>
+    <link rel="stylesheet" href="../static/newcss/login.css">
+   
+</head>
+{% endblock %}
+{% block content%}
+<body>
+    <div class="main_container">
+            <div class="login_container">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="title">
+                        <h1>The Lazarus Method</h1>
+                        <h3>Enter your account details below.</h3>
+                    </div>
+                    <div class="input_boxes">
+                        {% for field in form.email %}    
+                            {{ field.errors }}
+                            {{field}}
+                            {{ field.help_text }}
+                        {% endfor %}
+                    </div>
+                    <div class="input_boxes">
+                        {% for field in form.password %}    
+                            {{ field.errors }}
+                            {{field}}
+                            {{ field.help_text }}
+                        {% endfor %}
+                    </div>
+                    <div class="button">
+                        <button method="post" class="continue_button" type="submit" value="Log in">Sign in</button>
+                    </div>
+                </form>
+                <div class="forgot_password">
+                    <a class="forgot_password_link" onclick="location.href = '../reset_password'">Forgot your password?</a>
+                </div>
+                <!--
+                <div class="line">
+                    <hr>
+                </div>
+                --> 
+                <div class="dont_have_account">
+                    <a>Not Enrolled?</a>
+                    <button class="get_started_button" onclick="location.href = '../signup'" type="submit" id="createAccountLink">Get started</button>
+                </div>
+            </div>
+        
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+<head>
+    <link rel="stylesheet" href="../static/newcss/login.css">
+
+</head>
+{% endblock %}
+{% block content %}
+    <body>
+      
+
+    <div class="main_container">
+        <div class="left">
+            <div class="chart">
+                <img src="../static/images/image1.png" alt="chart">
+            </div>
+        </div>
+        <div class="right">
+            <div class="login_container">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="title">
+                        <h1>The Lazarus Method</h1>
+                        <h3>Please fill in your account details below.</h3>
+                    </div>
+                    <div class="input_boxes">
+                        {% for field in form.first_name %}    
+                            {{ field.errors }}
+                            {{field}}
+                            {{ field.help_text }}
+                        {% endfor %}
+                    </div>
+                    <div class="input_boxes">
+                        {% for field in form.last_name %}    
+                            {{ field.errors }}
+                            {{field}}
+                            {{ field.help_text }}
+                        {% endfor %}
+                    </div>
+                    <div class="input_boxes">
+                        {% for field in form.email %}    
+                            {{ field.errors }}
+                            {{field}}
+                            {{ field.help_text }}
+                        {% endfor %}
+                    </div>
+                    <div class="input_boxes">
+                        {% for field in form.password1 %}    
+                            {{ field.errors }}
+                            {{field}}
+                            {{ field.help_text }}
+                        {% endfor %}
+                    </div>
+                    <div class="input_boxes">
+                        {% for field in form.password2 %}    
+                            {{ field.errors }}
+                            {{field}}
+                            {{ field.help_text }}
+                        {% endfor %}
+                    </div>
+                    <div class="button">
+                        <button method="post" class="continue_button" type="submit" value="Sign up">Sign up</button>
+                    </div>
+                </form>
+                <!--
+                <div class="forgot_password">
+                    <a class="forgot_password_link">Forgot your password?</a>
+                </div>-->
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="dont_have_account">
+                    <a>Already have an account?</a>
+                    <button class="get_started_button" onclick="location.href = '../login'" type="submit" id="createAccountLink">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+    {% endblock %}
+
+   
+    
+    
+</html>

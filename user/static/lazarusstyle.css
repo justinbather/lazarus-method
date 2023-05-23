@@ -1,0 +1,479 @@
+body {
+    background-color: #131313;
+    font-family: 'Futura PT';
+}
+
+hr {
+    width: 75%;
+  }
+
+.navbar_container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 83px;
+    height: 100vh; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #FFF;
+  }
+
+.navbar_container li a {
+    display: block;
+    color: #FFF;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-right: 2px;
+}
+
+.navbar_container li a:hover {
+    background-color: #424242;
+}
+
+.navbar_container ul li:last-child {
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    flex-direction: column;
+}
+
+.title h1 {
+    font-family: 'Futura PT';
+    font-weight: 400;
+    color: #FCE3B6;
+    font-size: 60px;
+    padding: 0;
+    margin: 0;
+    line-height: 70px;
+}
+
+.title h3 {
+  font-family: 'Futura PT';
+  font-weight: 400;
+  color: #FFF;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 5px;
+  padding-left: 9px;
+}
+
+.belts_container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  cursor: pointer;
+  right: -15px;
+}
+
+.belts_container li {
+  padding: 5px;
+  border: none;
+  margin: -40px;
+}
+
+.belts_container img {
+  width: 80%;
+  height: 100%;
+}
+
+#container {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  position: relative;
+  margin-left: 20px;
+}
+
+#center {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 295px;
+  top: 295px;
+  background: #000;
+}
+
+.center {
+  cursor: pointer;
+  scale : 1.2;
+  position: absolute;
+}
+
+.field {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  cursor: pointer;
+}
+
+#crosshair-x {
+  width: 600px;
+  height: 1px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: 300px;
+}
+
+#crosshair-y {
+  width: 1px;
+  height: 600px;
+  background: #000;
+  position: absolute;
+  left: 300px;
+  top: 0;
+}
+
+.bottom_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom_text h1 {
+  font-family: 'Futura PT';
+  font-weight: 400;
+  color: #FCE3B6;
+  font-size: 40px;
+  padding: 0;
+  margin-left: 20px;
+  margin-top: 20px;
+  line-height: 70px;
+}
+
+.chart {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 84px;
+    flex-direction: column;
+}
+
+.hands-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 20px 84px;
+}
+
+.tasks {
+    padding: 0;
+    margin: 0;
+    font-family: 'Futura PT';
+    font-size: 20px;
+}
+    
+.tasks-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #FFF;
+}
+    
+.tasks-container ul {
+    list-style-type: none;
+    padding-left: 84px;
+    margin: 0;
+}
+    
+.tasks-container li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    cursor: pointer;
+}
+    
+.tasks-container li input[type="checkbox"] {
+    position: absolute;
+    left: 15px;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+    
+.tasks-container li label {
+    margin: 0;
+    text-align: center;
+    padding: 5px 15px 5px 15px;
+}
+
+.tasks-container li:hover {
+    background-color: #424242;
+}
+
+.line {
+    padding-left: 84px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.completed-tasks {
+    padding: 0;
+    margin: 0;
+    font-family: 'Futura PT';
+    font-size: 20px;
+}
+    
+.completed-tasks-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #FFF;
+}
+    
+.completed-tasks-container ul {
+    list-style-type: none;
+    padding-left: 84px;
+    margin: 0;
+}
+    
+.completed-tasks-container li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: line-through;
+}
+    
+.completed-tasks-container li input[type="checkbox"] {
+    position: absolute;
+    left: 15px;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+    
+.completed-tasks-container li label {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.completed-tasks-container li:hover {
+    background-color: #424242;
+}
+
+.mark-done-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 84px;
+    margin-top: 40px;
+}
+
+.mark-done-button button {
+    background-color: #FCE3B6;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.mark-done-button button:hover {
+    background-color: #FCE3B1;
+}
+
+.mark-done-button button:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+}
+
+.main_container {
+  
+    display: flex;
+  }
+  
+  .left {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 50%;
+  }
+  
+  .right {
+    margin-top: 100px;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .chart img {
+    max-width: 75%;
+    height: auto;
+    padding-top: 80px;
+    padding-left: 125px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .chart img {
+      display: none;
+    }
+
+    .right {
+      flex-basis: 100%;
+      text-align: center;
+    }
+    .left {
+      display: none;
+    }
+  }
+
+  .input_boxes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input_boxes input {
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 18px;
+    background-color: #131313;
+    outline: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: white;
+  }
+
+  .login_container {
+    padding-right: 50px;
+  }
+
+  .login_container h1 {
+    font-size: 55px;
+    font-weight: 400;
+    color: #FCE3B6;
+    margin-bottom: 0;
+    padding-bottom: -20px;
+  }
+
+  .login_container h3 {
+    font-size: 22px;
+    color: #FFF;
+    font-weight: 400;
+    padding-left: 70px;
+    padding-top: -20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .login_container button {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 75px;
+    background-color: #FCE3B6;
+    border: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #131313;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  .login_container button:hover {
+    background-color: #FCE3B6;
+    opacity: 0.8;
+  }
+
+  .login_container .forgot_password_link {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    padding-left: 70px;
+    padding-top: 10px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    margin-left: 40px;
+  }
+
+  .login_container .forgot_password_link:hover {
+    color: lightgray;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .login_container hr {
+    margin-top: 75px;
+  }
+
+  .login_container .dont_have_account {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } 
+
+  .login_container .dont_have_account a {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 0;
+    padding-top: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 40px;
+    color: #FCE3B6;
+  }
+
+  .login_container .dont_have_account a:hover {
+    color: #FCE3B6;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .login_container .dont_have_account button {
+    margin-bottom: 0;
+    margin-left: 10px;
+    width: 40%;
+    height: 50px;
+    background-color: #FCE3B6;
+    border: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #131313;
+    outline: 0;
+    cursor: pointer;
+  }

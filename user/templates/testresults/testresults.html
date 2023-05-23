@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="../static/newcss/progress.css">
+<div class="navbar">
+  <div class="navbar_container">
+      <ul>
+          <li><a href="../home"><img src="../static/images/ProfileIcon.png" /></a></li>
+          <hr>
+          <li><a href="../home"><img src="../static/images/HomeIcon.png" /></a></li>
+          <hr>
+          <li><a href="../progress"><img src="../static/images/progressicon.png" /></a></li>
+          <li><a href="../logout"><img src="../static/images/logout.png"></a></li>
+      </ul>
+  </div>
+  <div class="title">
+      <h1>Test Results</h1>
+      <h3>Your fitness in 4 categories.</h3>
+  </div>
+  <div class="chart">
+      <canvas id="radar-chart" style="height:75vh; width: auto;"></canvas>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+   
+
+    var config = {
+      type: 'radar',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          label: 'Score',
+          fill: true,
+          backgroundColor: "rgba(252, 227, 182, 0.5)",
+          borderColor: "rgba(252, 227, 182, 1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, 1)"
+                  }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: false,
+    devicePixelRatio: 4,
+    legend: {
+      display: false
+    },
+    borderWidth: 10,
+    scale: {
+        angleLines: {
+                "color": "white"
+            },
+      ticks: {
+        maxTicksLimit: 1,
+        backdropColor: "rgba(0, 0, 0, 0)",
+        fontSize: 18,
+        max: 10
+      },
+      gridLines: {
+        lineWidth: 2,
+        color: "white"
+      },
+      pointLabels: {
+        fontSize: 18,
+        fontStyle: "bold",
+        color: "white",
+      }
+    }  
+        
+    },
+};
+
+
+    window.onload = function() {
+      var ctx = document.getElementById('radar-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+
+  </script>
+
+
+
+{% endblock %}
