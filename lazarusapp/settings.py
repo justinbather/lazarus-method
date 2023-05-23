@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=&f8dm5v27&r3l4(ac=fo*g@@n0i5q9qg=f5#117(#*6&(i@_o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lazarus-method.herokuapp.com'] #['192.168.86.40']
+ALLOWED_HOSTS = [] #['lazarus-method.herokuapp.com'] 
 
 
 # Application definition
@@ -78,6 +78,14 @@ WSGI_APPLICATION = 'lazarusapp.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}"""
+
 
 DATABASES = {
     'default': {
