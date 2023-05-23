@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=&f8dm5v27&r3l4(ac=fo*g@@n0i5q9qg=f5#117(#*6&(i@_o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lazarus-method.herokuapp.com'] 
+ALLOWED_HOSTS = ['lazarus-method.herokuapp.com'] #
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
