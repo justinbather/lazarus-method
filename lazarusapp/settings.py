@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=&f8dm5v27&r3l4(ac=fo*g@@n0i5q9qg=f5#117(#*6&(i@_o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lazarus-method.herokuapp.com'] #
+ALLOWED_HOSTS = [] #
 
 
 # Application definition
@@ -232,13 +232,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = 'user/static/'
+STATIC_URL = 'accounts/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'user.CustomUser'
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # SMTP Config
 
