@@ -107,10 +107,7 @@ def progress(request):
         queryset_initial = models.Progress.objects.filter(user=request.user, belt='None').order_by('category')
         for entry in queryset_initial:
             labels_none.append(entry.category)
-            
             data_none.append(entry.score)
-        x = 4
-        print(labels_none[x], data_none[x])
         try:
             object_test1 = models.PatientTest.objects.get(patient=request.user, exam_number='1')
 

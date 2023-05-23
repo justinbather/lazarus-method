@@ -51,7 +51,7 @@ def category_completion(category_input, category_id, current_belt, request):
 
 def current_belt(request):
 
-    belts = Belt.objects.filter(user=request.user)
+    belts = Belt.objects.filter(user=request.user).order_by('id')
     for belt in belts:
         if belt.completed == False:
             current_belt = belt
