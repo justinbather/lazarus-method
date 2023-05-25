@@ -1,6 +1,8 @@
 body {
     background-color: #BFC1C2;
     font-family: 'Futura PT';
+    overflow-x: hidden;
+    position: relative;
 }
 
 .main_container {
