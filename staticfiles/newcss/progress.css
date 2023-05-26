@@ -181,6 +181,7 @@ padding-left: 0px;
     left: 15px;
     border-radius: 20px;
     width: 60px;
+    z-index: 1;
   }
   
   .navbar_container.show .hamb-icon {
