@@ -795,9 +795,9 @@ def onboarding_results(request):
     labels_none = []
 
     queryset_initial = models.Progress.objects.filter(user=request.user, belt='None').order_by('category')
-        for entry in queryset_initial:
-            labels_none.append(entry.category)
-            data_none.append(entry.score)
+    for entry in queryset_initial:
+        labels_none.append(entry.category)
+        data_none.append(entry.score)
     
     context = {'data_none': data_none, 'labels_none': labels_none}
     #query onboarding score
