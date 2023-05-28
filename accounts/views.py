@@ -785,9 +785,27 @@ def onboarding7(request):
 
             return redirect('biomarker_entry')
         else:
-            return redirect('home')
+            return redirect('onboarding_results')
 
     return render(request, 'onboarding/onboarding7.html', {"question_list":question_list})
+
+@login_required
+def onboarding_results(request):
+    data_none = []
+    labels_none = []
+
+    queryset_initial = models.Progress.objects.filter(user=request.user, belt='None').order_by('category')
+        for entry in queryset_initial:
+            labels_none.append(entry.category)
+            data_none.append(entry.score)
+    
+    context = {'data_none': data_none, 'labels_none': labels_none}
+    #query onboarding score
+    #create context from query similar to progress view
+    if request.POST:
+        return ('home')
+
+    return render(request, 'onboarding/onboarding_results.html', context)
 
 @login_required
 def biomarker_entry(request):

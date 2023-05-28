@@ -16,6 +16,7 @@ urlpatterns = [
     path('onboarding/5', views.onboarding5, name='onboarding5'),
     path('onboarding/6', views.onboarding6, name='onboarding6'),
     path('onboarding/7', views.onboarding7, name='onboarding7'),
+    path('onboarding_results', views.onboarding_results, name='onboarding_results'),
     path('logout/', views.logout_request, name='logout'),
     path('home/', views.home, name='home'),
     path('welcome/', views.welcome, name='welcome'),
