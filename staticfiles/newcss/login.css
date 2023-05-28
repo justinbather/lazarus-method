@@ -64,6 +64,11 @@ body {
     padding-left: 100px;
   }
 
+  .logo {
+    width: 500px;
+    white-space: nowrap !important;
+  }
+
   .login_container h1 {
     font-size: 3rem;
     font-weight: 400;
@@ -182,6 +187,11 @@ body {
       margin: 0 auto;
       align-content: center;
       width: 80vw;
+    }
+
+    .logo {
+      width: 80vw;
+      white-space: nowrap !important;
     }
 
     .login_container h1 {
