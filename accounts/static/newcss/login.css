@@ -67,6 +67,7 @@ body {
   .logo {
     width: 500px;
     white-space: nowrap !important;
+    left:15px;
   }
 
   .login_container h1 {
