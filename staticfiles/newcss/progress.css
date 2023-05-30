@@ -125,6 +125,7 @@ hr {
       padding-left: 0px;
       overflow: hidden;
       text-align: center;
+      z-index: -999;
     }
 
     .chart-container {
@@ -194,7 +195,7 @@ padding-left: 0px;
     left: 15px;
     border-radius: 20px;
     width: 60px;
-    z-index: 1;
+    z-index: 999;
   }
   
   .navbar_container.show .hamb-icon {
