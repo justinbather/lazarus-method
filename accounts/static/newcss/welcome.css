@@ -1,5 +1,7 @@
 body {
     background-color: #BFC1C2;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .main-container {
