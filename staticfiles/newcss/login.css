@@ -17,7 +17,23 @@ body {
     padding-top: 50px;
   }
   
-  
+  /* Placeholder text colour*/
+
+  ::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 1);
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    color: rgba(255, 255, 255, 1);
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: rgba(255, 255, 255, 1);
+ }
+ 
+ :-ms-input-placeholder {
+    color: rgba(255, 255, 255, 1);
+ }
   
   
 
