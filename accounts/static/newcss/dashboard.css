@@ -74,14 +74,15 @@ hr {
 
 .title h3 {
   font-family: 'Futura PT';
-  font-weight: 400;
-  color: #000;
+  font-weight: 300;
+  color: #fff;
   font-size: 1.5rem;
   padding: 0;
   margin: 0;
   margin-right: 15px;
   letter-spacing: 5px;
   padding-left: 9px;
+  text-align: center;
 }
 
 .belts_container ul {
