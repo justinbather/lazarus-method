@@ -1,6 +1,8 @@
 body {
     background-color: #BFC1C2;
     background-image: url('/user/static/images/sunsetbg.jpg');
+    overflow: hidden;
+    position: relative;
 }
 
 hr {
