@@ -140,7 +140,7 @@ hr {
     background-color: none;
   }
   
-  .tasks-container:hover {
+  .tasks-container ul:hover {
     background-color: none;
   }
   
