@@ -135,14 +135,10 @@ hr {
     padding-left: 60px !important;
     text-align: center;
   }
-  .tasks-container li label:hover {
-    background-image: none;
-    background-color: none;
+  .tasks-container li:hover {
+    background-color: #BFC1C2;
   }
   
-  .tasks-container ul:hover {
-    background-color: none;
-  }
   
 .tasks-container li input[type="checkbox"] {
     position: absolute;
