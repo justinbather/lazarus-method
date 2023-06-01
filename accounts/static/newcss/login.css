@@ -84,7 +84,8 @@ body {
   .logo {
     width: 500px;
     white-space: nowrap !important;
-    left:15px;
+    margin-left: auto;
+    margin-right: auto
   }
 
   .login_container h1 {
