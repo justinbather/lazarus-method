@@ -137,7 +137,11 @@ hr {
   }
   .tasks-container li label:hover {
     background-image: none;
-    background-color: #fff;
+    background-color: none;
+  }
+  
+  .tasks-container:hover {
+    background-color: none;
   }
   
 .tasks-container li input[type="checkbox"] {
