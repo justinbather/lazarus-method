@@ -149,6 +149,10 @@ hr {
     padding-right: 50px;
     
   }
+  .tasks-container li label:focus, input:focus, text:focus {
+    outline: none;
+    
+  }
 
 .tasks-container li #text {
   padding-left: 100px;
