@@ -149,16 +149,17 @@ hr {
     padding-right: 50px;
     
   }
+  /*
   .tasks-container li input[type="checkbox"]:after {
     outline: none;
   }
-
+  */
 .tasks-container li #text {
   padding-left: 100px;
 }
 
 .tasks-container li:hover {
-    background-color: #424242;
+    background-color: none;
   }
 
 .line {
