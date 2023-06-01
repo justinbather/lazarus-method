@@ -175,7 +175,7 @@ padding-left: 0px;
     text-align: center;
   }
   
-  .hamb-icon img{
+  .hamb-icon {
     visibility: visible;
     color:#FFFFFF;
     display: block;
@@ -184,6 +184,10 @@ padding-left: 0px;
     left: 15px;
     border-radius: 20px;
     width: 30px !important;
+  }
+
+  .hamb-icon img {
+    width: 30px;
   }
   
   .navbar_container.show .exit-icon {
