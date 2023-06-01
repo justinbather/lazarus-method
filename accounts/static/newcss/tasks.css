@@ -135,6 +135,10 @@ hr {
     padding-left: 60px !important;
     text-align: center;
   }
+  .tasks-container li:hover {
+    background-image: none;
+    background-color: none;
+  }
   
 .tasks-container li input[type="checkbox"] {
     position: absolute;
@@ -158,9 +162,7 @@ hr {
   padding-left: 100px;
 }
 
-.tasks-container li:hover {
-    background-color: none;
-  }
+
 
 .line {
     padding-left: 84px;
@@ -226,7 +228,8 @@ hr {
   }
 
 .completed-tasks-container li:hover {
-    background-color: #424242;
+    background-color: none;
+    background-image: none;
 }
 
 .mark-done-button {
