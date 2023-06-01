@@ -149,9 +149,8 @@ hr {
     padding-right: 50px;
     
   }
-  .tasks-container li label:focus, input:focus, text:focus {
+  .tasks-container li input[type="checkbox"]:focus {
     outline: none;
-    
   }
 
 .tasks-container li #text {
