@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="../static/newcss/tasks.css">
     
     <div class="title" style="padding-left:0;">
-        <h1>Welcome!</h1>
-        <h3>Please select all that are true.</h3>
+        <h1>Let's Go!</h1>
+        <h3>Please select all that apply</h3>
     </div>
     <div class="progress" style="width: 80vw; align-content:center;">
         <div class="progress-bar" role="progressbar" style="width: 14%" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
@@ -33,25 +33,9 @@
                         {% endfor %}
                     </ul>
                 </div>
-            
-            <!--
-            {% for question in page_obj.object_list %}
-            
-                
-                    <li class="task_text"><input type="checkbox" name="question_true" id="{{ question.id }}" value="{{question.id}}"> {{question.question}} </li>
-                    <br>
-                    <br>
-            
-            {% endfor %}
-            <br>
-            <br>
-            <br>
-            -->
-           
 
-            
             <div class="continue-button" style="padding-left:0;">
-                <button  name="save" method="POST" > Continue </button>
+                <button  name="save" method="POST" >Continue</button>
             </div>
             
            
@@ -59,23 +43,6 @@
         </div>
             
         </form>
-    
-    <!--
-    <div class="list-group">
-        {% for task in task_list %}
-        <div class="list-group-item {% if task.completed %} task-complete {% endif %}">
-          <form style="display: inline;" method="post" onclick="location.href = '../checkoff'"}>
-            {% csrf_token %}
-            <input type="checkbox" name="completed" onchange="this.form.submit()" {% if task.completed %} checked
-              {% endif %} class="todo-status-checkbox"
-              title="{% if not task.completed %} mark as done {% else %} mark undone {% endif %}">
-          </form>
-          {{ task.task }}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
--->
 </body>
 
 
