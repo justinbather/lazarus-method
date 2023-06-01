@@ -408,6 +408,22 @@ hr {
   backdrop-filter: blur(5px);
 }
 
+.navbar_container.show .exit-icon {
+  visibility: visible;
+  color:#FFFFFF;
+  display: block;
+  position:fixed;
+  top: 10px;
+  left: 15px;
+  border-radius: 20px;
+  width: 60px;
+}
+
+.navbar_container.show .hamb-icon {
+  visibility: hidden;
+  display: none;
+}
+
 .navbar_container.show ul {
   flex-direction: column;
   align-items: center;
@@ -435,16 +451,8 @@ hr {
   width: 60px;
 }
 
-.navbar_container.show .exit-icon {
-  visibility: visible;
-  color:#FFFFFF;
-  display: block;
-  position:fixed;
-  top: 667px;
-  left: 15px;
-  border-radius: 20px;
-  width: 60px;
-}
+
+
 
 .navbar_container.overlay {
   position: fixed;
