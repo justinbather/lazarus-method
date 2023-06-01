@@ -149,7 +149,7 @@ hr {
     padding-right: 50px;
     
   }
-  .tasks-container li input[type="checkbox"]:focus {
+  .tasks-container li input[type="checkbox"]:after {
     outline: none;
   }
 

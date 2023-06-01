@@ -181,6 +181,9 @@ hr {
   line-height: 70px;
 }
 
+
+/* Will need another step of logic for 350px to push the icons up and make smaller to fit 
+without needing to scroll */
 @media only screen and (max-width: 600px) {
   .belts_container {
     display: none;
