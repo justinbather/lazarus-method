@@ -135,9 +135,9 @@ hr {
     padding-left: 60px !important;
     text-align: center;
   }
-  .tasks-container li:hover {
-    background-image: #fff;
-    background-color: none;
+  .tasks-container li label:hover {
+    background-image: none;
+    background-color: #fff;
   }
   
 .tasks-container li input[type="checkbox"] {
