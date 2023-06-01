@@ -136,7 +136,7 @@ hr {
     text-align: center;
   }
   .tasks-container li:hover {
-    background-image: none;
+    background-image: #fff;
     background-color: none;
   }
   
