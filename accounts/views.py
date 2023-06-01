@@ -66,8 +66,8 @@ def logout_request(request):
 
 @login_required(login_url='../login/')
 def home(request):
-    
-    context = {"first_name":request.user.first_name}
+    user_belt = current_belt(request)
+    context = {"first_name":request.user.first_name, 'user_belt': user_belt}
     return render(request, 'home/home_page.html', context)
 
 
