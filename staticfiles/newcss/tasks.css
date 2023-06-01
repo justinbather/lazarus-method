@@ -359,6 +359,7 @@ hr {
 
   .completed-tasks-container li, .tasks-container li {
     width: 90vw;
+    
   }
 
   .mark-done-button button {
@@ -375,6 +376,7 @@ hr {
 
   .tasks-container ul, .completed-tasks-container ul {
     padding-left: 0px;
+    width: 90vw;
   }
 
 
