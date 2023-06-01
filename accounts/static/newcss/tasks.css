@@ -1,5 +1,7 @@
 body {
     background-color: #BFC1C2;
+    overflow: hidden;
+    position: relative;
 }
 
 hr {
