@@ -50,6 +50,7 @@ hr {
     padding-left: 0px;
     flex-direction: column;
     z-index: -1;
+    font-family: 'Futura PT';
   }
 
 .title h1 {
@@ -126,6 +127,10 @@ hr {
       overflow: hidden;
       text-align: center;
       z-index: -999;
+    }
+
+    .title h1 {
+      font-size: 50px;
     }
 
     .chart-container {
@@ -221,6 +226,10 @@ padding-left: 0px;
   .navbar_container.show.overlay {
     display: block; /* Show the overlay when hamburger icon is clicked */
     opacity: 1;
+  }
+
+  .continue_button {
+    width: 80%;
   }
    
   }
