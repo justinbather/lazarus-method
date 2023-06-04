@@ -861,6 +861,61 @@ def afterbeltform(request):
 def welcome(request):
     return render(request, 'welcome/welcome.html')
 
+@login_required
+def wlkthru_home(request):
+    if request.POST:
+        return redirect('wlkthrough_task')
+    return render(request, 'walkthrough/home.html')
+
+@login_required
+def wlkthru_task(request):
+    
+    user_belt = current_belt(request)
+    task_list = models.Task.objects.filter(category__category_type='Spark',belt__belt_colour=user_belt, user=request.user)
+    
+    
+    if request.POST:
+
+        #Stores task ids that were selected in html checkboxes
+        checked_tasks = request.POST.getlist("task_complete")
+
+        for task_id in checked_tasks:
+            task = models.Task.objects.get(id=int(task_id))
+            task.completed = True
+            task.save()
+         
+        #Allows users do undo task completion
+        #Opposite to above logic
+        unchecked_tasks = request.POST.getlist("task_incomplete")
+
+        for task_id in unchecked_tasks:
+            task = models.Task.objects.get(id=int(task_id))
+            task.completed = False
+            task.save()
+            
+        return redirect('wlkthru_task')
+
+    return render(request, 'walkthrough/task.html')
+
+@login_required
+def wlkthru_progress(request):
+    if request.POST:
+        return redirect('home')
+    return render(request,'walkthrough/progress.html')
+
+def wlkthru_complete(request):
+    # undoing any tasks marked complete in walkthrough
+    user_belt = current_belt(request)
+    task_list = models.Task.objects.filter(category__category_type='Spark',belt__belt_colour=user_belt, user=request.user, completed=True)
+    for task in task_list:
+        task.completed = False
+        task.save()
+
+    if request.POST:
+        return redirect('home')
+        
+    return render(request,'walkthrough/complete.html')
+
 
 @login_required
 def connect(request):

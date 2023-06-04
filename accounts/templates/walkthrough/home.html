@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+    <link rel="stylesheet" href="../static/newcss/dashboard.css">
+    <div class="navbar">
+        <div class="navbar_container">
+            <a class="hamb-icon"><img src="../static/images/icons8-menu-rounded-50.png"/></a>
+            <ul>
+                <li><a href=""><img src="../static/images/ProfileIcon.png" /></a></li>
+                <hr>
+                <li><a href="../home"><img src="../static/images/HomeIcon.png" /></a></li>
+                <hr>
+                <li><a href="../progress"><img src="../static/images/progressicon.png" /></a></li>
+                <hr>
+                <li><a href="../logout"><img src="../static/images/logout.png"></a></li>
+            </ul>
+            <div class="overlay"></div>
+          <a class="exit-icon"><img src="../static/images/icons8-close-window-50.png"/></a>
+        </div>
+    </div>
+    <script>
+    const menuIcon = document.querySelector('.hamb-icon');
+    const exitIcon = document.querySelector('.exit-icon');
+    const navbar = document.querySelector('.navbar_container');
+    const overlay = document.querySelector('.overlay');
+
+    menuIcon.addEventListener('click', () => {
+    navbar.classList.add('show');
+    overlay.classList.add('show');
+    });
+
+    exitIcon.addEventListener('click', () => {
+    navbar.classList.remove('show');
+    overlay.classList.remove('show');
+    });
+    </script>
+    
+    <div class="title">
+        <h1>Hey, {{first_name}}!</h1>
+        <h3>Welcome to <b>{{user_belt}}</b> belt.</h3>
+    </div>
+    <div class="belts">
+        <div class="belts_container">
+            <ul>
+
+                <li><a><img class="belts" href="white-belt.html" src="../static/images/Vector7.svg" /></a></li>
+                <li><a><img class="belts" href="yellow-belt.html" src="../static/images/Vector8.svg" /></a></li>
+                <li><a><img class="belts" href="green-belt.html" src="../static/images/Vector9.svg" /></a></li>
+                <li><a><img class="belts" href="blue-belt.html" src="../static/images/Vector10.svg" /></a></li>
+                <li><a><img class="belts" href="brown-belt.html" src="../static/images/Vector11.svg" /></a></li>
+                <li><a><img class="belts" href="purple-belt.html" src="../static/images/Vector12.svg" /></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pic_box" id="container">
+        <img class="center" src="../static/images/SparkIcon.svg" onclick="location.href = '../spark'">
+        <img class="field" src="../static/images/ConnectIcon.svg" onclick="location.href = '../connect'">
+
+        <img class="field" src="../static/images/NourishIcon.svg" onclick="location.href = '../nourish'">
+        <img class="field" src="../static/images/RestIcon.svg" onclick="location.href = '../rest'">
+        <img class="field" src="../static/images/MoveIcon.svg" onclick="location.href = '../move'">
+        
+        <img class="field" src="../static/images/LearnIcon.svg" onclick="location.href = '../learn'">
+        <img class="field" src="../static/images/ChallengeIcon.svg" onclick="location.href = '../challenge'">
+
+    </div>
+    <div class="bottom_text">
+        <h1>The Lazarus Method</h1>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        
+        if (window.innerWidth < 600) {
+            var radius = 160;
+        } else {
+            var radius = 210;
+            
+}
+        var fields = $('.field'),
+          container = $('#container'),
+          width = container.width(),
+          height = container.height();
+        var angle = 0,
+          step = (2 * Math.PI) / fields.length;
+        fields.each(function() {
+          var x = Math.round(width / 2 + radius * Math.cos(angle + 331 * Math.PI / 180) - $(this).width() / 2);
+          var y = Math.round(height / 2 + radius * Math.sin(angle + 330 * Math.PI / 180) - $(this).height() / 2);
+          if (window.console) {
+            console.log($(this).text(), x, y);
+          }
+          $(this).css({
+            left: x + 'px',
+            top: y + 'px'
+          });
+          angle += step;
+        });
+    </script>
+</body>
+{% endblock %}

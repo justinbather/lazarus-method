@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="../static/newcss/progress.css">
+    <div class="navbar">
+        <div class="navbar_container">
+            <a class="hamb-icon"><img src="../static/images/icons8-menu-rounded-50.png"/></a>
+            <ul>
+                <li><a href=""><img src="../static/images/ProfileIcon.png" /></a></li>
+                <hr>
+                <li><a href="../home"><img src="../static/images/HomeIcon.png" /></a></li>
+                <hr>
+                <li><a href="../progress"><img src="../static/images/progressicon.png" /></a></li>
+                <hr>
+                <li><a href="../logout"><img src="../static/images/logout.png"></a></li>
+            </ul>
+            <div class="overlay"></div>
+          <a class="exit-icon"><img src="../static/images/icons8-close-window-50.png"/></a>
+        </div>
+    </div>
+    <script>
+    const menuIcon = document.querySelector('.hamb-icon');
+    const exitIcon = document.querySelector('.exit-icon');
+    const navbar = document.querySelector('.navbar_container');
+    const overlay = document.querySelector('.overlay');
+
+    menuIcon.addEventListener('click', () => {
+    navbar.classList.add('show');
+    overlay.classList.add('show');
+    });
+
+    exitIcon.addEventListener('click', () => {
+    navbar.classList.remove('show');
+    overlay.classList.remove('show');
+    });
+    </script>
+  <div class="title">
+      <h1 style="z-index:-999;">Progress</h1>
+      <h3>Category scores are updated after each belt.</h3>
+  </div>
+  <div class="selectBox">
+    <select id="scoreDropdown">
+      <option value="2, 8, 4, 9, 6, 10, 5">Baseline</option>
+      <option value="4, 8, 5, 10, 7, 10, 6">White Belt</option>
+      <option value="5, 9, 6, 10, 8, 10, 7">Yellow Belt</option>
+      <option value="6, 10, 7, 10, 8, 10, 7">Green Belt</option>
+      <option value="7, 10, 8, 10, 9, 10, 8">Blue Belt</option>
+      <option value="8, 10, 9, 10, 10, 10, 9">Orange Belt</option>
+      <option value="9, 10, 10, 10, 10, 10, 10">Purple Belt</option>
+      <option value="10, 10, 10, 10, 10, 10, 10">Final Score</option>
+    </select>
+  </div>
+  <div class="chart-container" >
+      <canvas class="polar-chart" id="polar-chart" ></canvas>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  
+  <script>
+ 
+   
+
+    var config = {
+      type: 'radar',
+      data: {
+        datasets: [
+          {
+          data: "2, 8, 4, 9, 6, 10, 5",
+          label: 'Score',
+          fill: true,
+          backgroundColor: "rgba(0, 255, 0, 0.3)", 
+          borderColor: "rgba(255, 255, 255, 0.8)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, .1)"
+                  },
+                 
+                  
+                ],
+        labels: ['CHALLENGE', 'CONNECT', 'LEARN', 'MOVE', 'NOURISH', 'REST', 'SPARK']
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        devicePixelRatio: 4,
+        scales: {
+          
+      r: {
+        pointLabels: {
+          display: true,
+          centerPointLabels: true,
+          font: {
+            size: 15
+          },
+          grid: {
+            display: true,
+            
+          }
+        }
+      }
+    },
+        
+        legend: {
+          display: false
+                },
+         borderWidth: 10,
+          scale: {
+            lineArc: false,
+            ticks: {
+              max: 10,
+              stepSize: 2,
+              beginAtZero: true,
+              },
+      
+      pointLabels: {
+        fontSize: 15,
+        fontStyle: "bold",
+        color: "white",
+        centerPointLabels: true,
+        display:true
+      }
+    }  
+        
+    },
+};
+
+var scoreDropdown = document.getElementById('scoreDropdown');
+  scoreDropdown.addEventListener('change', scoreSelector);
+function scoreSelector() {
+  config.data.datasets.splice(0, 1);
+  
+
+  window.myChart.update();
+  config.data = {
+    datasets: [
+          {
+          data: scoreDropdown.value,
+          label: 'Score',
+          fill: true,
+          backgroundColor: "rgba(0, 255, 0, 0.3)", 
+          borderColor: "rgba(255, 255, 255, 0.8)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252, 227, 182, .1)"
+                  },
+                 
+                  
+                ],
+        labels: ['CHALLENGE', 'CONNECT', 'LEARN', 'MOVE', 'NOURISH', 'REST', 'SPARK']
+      }
+
+  window.myChart.update();
+
+  
+  }
+
+    window.onload = function() {
+      var ctx = document.getElementById('polar-chart').getContext('2d');
+      window.myChart = new Chart(ctx, config);
+    };
+
+    
+
+  </script>
+
+
+
+
+{% endblock %}
+
