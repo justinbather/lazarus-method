@@ -130,11 +130,11 @@ function scoreSelector() {
   config.data.datasets.splice(0, 1);
   
 
-  window.myChart.update();
+
   config.data = {
     datasets: [
           {
-          data: scoreDropdown.value,
+          data: scoreDropdown.value.splice(0, 1),
           label: 'Score',
           fill: true,
           backgroundColor: "rgba(0, 255, 0, 0.3)", 
