@@ -780,12 +780,8 @@ def onboarding7(request):
         user.onboarding_complete = True
         user.save()
 
-        if user.program == "Personalized Pathfinder":
-            # Redirect to test results from for user entry 
-
-            return redirect('biomarker_entry')
-        else:
-            return redirect('onboarding_results')
+        
+        return redirect('onboarding_results')
 
     return render(request, 'onboarding/onboarding7.html', {"question_list":question_list})
 
