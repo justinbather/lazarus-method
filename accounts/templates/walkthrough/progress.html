@@ -134,7 +134,7 @@ function scoreSelector() {
   config.data = {
     datasets: [
           {
-          data: scoreDropdown.value.splice(0, 1),
+          data: scoreDropdown.value,
           label: 'Score',
           fill: true,
           backgroundColor: "rgba(0, 255, 0, 0.3)", 
@@ -147,7 +147,8 @@ function scoreSelector() {
                 ],
         labels: ['CHALLENGE', 'CONNECT', 'LEARN', 'MOVE', 'NOURISH', 'REST', 'SPARK']
       }
-
+      //Error with data from select
+      console.log(scoreDropdown.value)
   window.myChart.update();
 
   
