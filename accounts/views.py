@@ -900,7 +900,7 @@ def wlkthru_task(request):
 @login_required
 def wlkthru_progress(request):
     if request.POST:
-        return redirect('home')
+        return redirect('wlkthru_complete')
     return render(request,'walkthrough/progress.html')
 
 def wlkthru_complete(request):
@@ -913,7 +913,7 @@ def wlkthru_complete(request):
 
     if request.POST:
         return redirect('home')
-        
+
     return render(request,'walkthrough/complete.html')
 
 
