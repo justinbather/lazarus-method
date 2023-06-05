@@ -40,7 +40,7 @@
   </div>
   <div class="selectBox">
     <select id="scoreDropdown">
-      <option value="'2', ' 3', ' 3', ' 3', ' 3', ' 3', ' 3'">Baseline</option>
+      <option value="['2', ' 3', ' 3', ' 3', ' 3', ' 3', ' 3']">Baseline</option>
       <option value="['4', ' 4', ' 5', ' 4', ' 4', ' 4', ' 4']">White Belt</option>
       <option value="['6', ' 5', ' 6', ' 5', ' 5', ' 5', ' 5']">Yellow Belt</option>
       <option value="['8', ' 6', ' 7', ' 6', ' 6', ' 6', ' 6']">Green Belt</option>
@@ -126,6 +126,9 @@
 
 var scoreDropdown = document.getElementById('scoreDropdown');
   scoreDropdown.addEventListener('change', scoreSelector);
+
+var newData = scoreDropdown.value.slice(1,-1);
+
 function scoreSelector() {
   config.data.datasets.splice(0, 1);
   
@@ -134,7 +137,7 @@ function scoreSelector() {
   config.data = {
     datasets: [
           {
-          data: scoreDropdown.value,
+          data: newData.split(","),
           label: 'Score',
           fill: true,
           backgroundColor: "rgba(0, 255, 0, 0.3)", 
