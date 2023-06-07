@@ -85,6 +85,10 @@ hr {
   text-align: center;
 }
 
+.belt_text {
+  text-transform: uppercase;
+}
+
 .belts_container ul {
   list-style-type: none;
   margin: 0;
