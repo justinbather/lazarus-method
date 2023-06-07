@@ -198,8 +198,8 @@ without needing to scroll */
   }
 
   .pic_box {
-    top: 0px;
-    padding-bottom: 50px;
+    top: -50px;
+    
   }
 
   .navbar_container ul {
