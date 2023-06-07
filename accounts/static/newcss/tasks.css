@@ -111,6 +111,7 @@ hr {
 
 .tasks-container li:has(input[type="checkbox"]:checked) {
   background-color: #202562;
+  animation-timing-function: linear;
   opacity: 50%;
   color: white;
 }
