@@ -76,8 +76,8 @@
                         {% if task.completed %}
                         <li>
                             <label type="checkbox" for="{{task.id}}">
-                                <input type="checkbox" name="task_complete" id="{{ task.id }}" value="{{task.id}}"> 
-                                You can also undo a task! Click me and press the button below to undo!
+                                <input type="checkbox" name="task_incomplete" id="{{ task.id }}" value="{{task.id}}"> 
+                                {{task.task}}
                             </label>
                         </li>
                         {% endif %}
