@@ -82,6 +82,15 @@ hr {
   align-items: center;
   z-index: 1;
 }
+
+.chart-container-wlkthru {
+  padding-top: 10px;
+  position: relative;
+  height: 300px !important;
+  align-items: center;
+  z-index: 1;
+
+}
   
 .selectBox {
   display: flex;
