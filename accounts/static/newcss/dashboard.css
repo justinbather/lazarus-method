@@ -85,6 +85,11 @@ hr {
   text-align: center;
 }
 
+.title h4 {
+  text-align: center;
+  margin-right: 20px;
+}
+
 .belt_text {
   text-transform: uppercase;
 }
