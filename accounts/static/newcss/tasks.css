@@ -85,6 +85,10 @@ hr {
     text-overflow: ellipsis;
 }
 
+.title h4 {
+  text-align: center;
+}
+
 .hands-picture {
     display: none;
     justify-content: center;
