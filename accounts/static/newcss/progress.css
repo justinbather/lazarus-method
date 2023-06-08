@@ -74,6 +74,10 @@ hr {
   padding-left: 9px;
 }
 
+.title h4 {
+  text-align: center;
+}
+
 
 .chart-container {
   padding-top: 10px;

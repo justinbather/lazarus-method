@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+<body style="overflow-y: scroll;">
 {% block content %}
 <link rel="stylesheet" href="../static/newcss/progress.css">
     <div class="navbar">
@@ -36,8 +36,8 @@
     </script>
   <div class="title">
       <h1 style="z-index:-999;">PROGRESS</h1>
-      <h3>Below are your scores for each category from 0 - 10</h3>
-      <h3>These scores are updated after each belt is completed</h3>
+      <h4>Below are your scores for each category from 0 - 10</h4>
+      <h4>These scores are updated after each belt is completed</h4>
       <h4>You can select the score you'd like to check with the dropdown</h4>
   </div>
   <div class="selectBox">
@@ -136,3 +136,4 @@
 
 {% endblock %}
 
+</body>
