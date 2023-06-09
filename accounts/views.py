@@ -895,7 +895,7 @@ def wlkthru_task(request):
             
         return redirect('wlkthru_task')
 
-    return render(request, 'walkthrough/task.html', {'tasklist': task_list})
+    return render(request, 'walkthrough/task.html', {'task_list': task_list})
 
 @login_required
 def wlkthru_progress(request):
