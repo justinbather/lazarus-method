@@ -1,6 +1,6 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from .models import CustomUser, Belt, Category, Task, FormQuestion, MCFormQuestion
+from .models import CustomUser, Belt, Category, Task, FormQuestion, MCFormQuestion, AssignedTask
 # Need to import final version of models for forms.
 
 #Intake form creation
