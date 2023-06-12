@@ -677,11 +677,49 @@ class Task(models.Model):
         return self.task
 
 class AssignedTask(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    # Defines Category Types
+    NOURISH = 'Nourish'
+    MOVE = 'Move'
+    REST = 'Rest'
+    CONNECT = 'Connect'
+    LEARN = 'Learn'
+    SPARK = 'Spark'
+    CHALLENGE = 'Challenge'
+
+    # Defines Choices
+    CATEGORYCHOICES = [
+        (NOURISH, _('Nourish')),
+        (MOVE, _('Move')),
+        (REST, _('Rest')),
+        (CONNECT, _('Connect')),
+        (LEARN, _('Learn')),
+        (SPARK, _('Spark')),
+        (CHALLENGE, _('Challenge'))
+    ]
+
+    # Defines Belt Colours
+    WHITE = 'White'
+    YELLOW = 'Yellow'
+    GREEN = 'Green'
+    BLUE = 'Blue'
+    ORANGE = 'Orange'
+    PURPLE = 'Purple'
+
+    # Defines Colour Choices in Belt
+    BELTCHOICES = [
+        (WHITE, _('White')),
+        (YELLOW, _('Yellow')),
+        (GREEN, _('Green')),
+        (BLUE, _('Blue')),
+        (ORANGE, _('Orange')),
+        (PURPLE, _('Purple'))
+    ]
+
+    category = models.CharField(choices=CATEGORYCHOICES, max_length=10)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     task = models.CharField(max_length=200)
     completed = models.BooleanField(default=False, blank=True)
-    belt = models.ForeignKey(Belt, on_delete=models.CASCADE)
+    belt = models.CharField(choices=BELTCHOICES, max_length=10)
 
     def __str__(self):
         return self.task
