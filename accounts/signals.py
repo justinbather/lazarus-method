@@ -322,5 +322,5 @@ def assign_tasks(sender, instance, created, **kwargs):
             for category_type in category_list:
                 tasks = AssignedTask.objects.filter(category=category_type, belt=belt_type)
                 if tasks:
-                for item in tasks:
-                    Task.objects.create(category=category_type, belt=belt_type, completed=False, user=instance, task=item)
+                    for item in tasks:
+                        Task.objects.create(category=category_type, belt=belt_type, completed=False, user=instance, task=item)
