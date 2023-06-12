@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+<body>
+{% block content %}
+<link rel="stylesheet" href="../static/newcss/welcome.css">
+<div class="main-container">
+    <div>
+        <h1>Next Step: The Application</h1>
+    </div>
+    <div> 
+        <h3>The Lazarus Method is designed help improve your health in</h3>
+        <h3>the 7 categories we just learned.</h3>
+    </div>
+    <div> 
+        <h4>Starting in White Belt you complete and check off the tasks in each category. 
+            When all tasks are complete you will be promoted to the next belt. After each belt you will be asked to complete a small questionnaire which helps track your progress. You can check this progress by pressing the "checkmark" icon in the side bar"
+        </h4>
+    </div>
+    <div>
+        <h4>Let's go home and we'll explain more as we go!</h4>
+    </div>
+    <div>
+        <button onclick="location.href = '../walkthrough/home'">Go Home</button>
+    </div>
+</div>
+
+{% endblock %}
+</body>

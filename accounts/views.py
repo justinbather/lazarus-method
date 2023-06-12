@@ -864,6 +864,32 @@ def welcome(request):
 def wlkthru_spark(request):
     return render(request, 'walkthrough/spark.html')
 
+def wlkthru_rest(request):
+    return render(request, 'walkthrough/rest.html')
+
+def wlkthru_nourish(request):
+    return render(request, 'walkthrough/nourish.html')
+
+def wlkthru_move(request):
+    return render(request, 'walkthrough/move.html')
+
+def wlkthru_learn(request):
+    return render(request, 'walkthrough/learn.html')
+
+def wlkthru_connect(request):
+    return render(request, 'walkthrough/connect.html')
+
+def wlkthru_challenge(request):
+    return render(request, 'walkthrough/challenge.html')
+
+def wlkthru_continue(request):
+    return render(request, 'walkthrough/continue.html')
+
+def wlkthru_start(request):
+    return render(request, 'walkthrough/start.html')
+
+
+
 @login_required
 def wlkthru_home(request):
     if request.POST:
