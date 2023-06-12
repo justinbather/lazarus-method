@@ -17,6 +17,7 @@ urlpatterns = [
     path('onboarding/6', views.onboarding6, name='onboarding6'),
     path('onboarding/7', views.onboarding7, name='onboarding7'),
     path('onboarding_results', views.onboarding_results, name='onboarding_results'),
+    path('walkthrough/spark', views.wlkthru_spark, name='wlkthru_spark'),
     path('walkthrough/home', views.wlkthru_home, name='wlkthru_home'),
     path('walkthrough/task', views.wlkthru_task, name='wlkthru_task'),
     path('walkthrough/progress', views.wlkthru_progress, name='wlkthru_progress'),

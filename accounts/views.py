@@ -861,6 +861,9 @@ def afterbeltform(request):
 def welcome(request):
     return render(request, 'welcome/welcome.html')
 
+def wlkthru_spark(request):
+    return render(request, 'walkthrough/spark.html')
+
 @login_required
 def wlkthru_home(request):
     if request.POST:
