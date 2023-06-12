@@ -850,8 +850,7 @@ def afterbeltform(request):
         for category in usercategories:
             category_score = calc_category_score(category, request)
             object = models.Progress.objects.create(score=category_score, belt=previous_belt, category=category, user=request.user)
-            print(object.score)
-            print(object.belt)
+            
         return redirect('home')
     return render(request, 'afterbeltform/afterbeltform.html', {"question_list":question_list})
 

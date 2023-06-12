@@ -716,7 +716,6 @@ class AssignedTask(models.Model):
     ]
 
     category = models.CharField(choices=CATEGORYCHOICES, max_length=10)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     task = models.CharField(max_length=200)
     completed = models.BooleanField(default=False, blank=True)
     belt = models.CharField(choices=BELTCHOICES, max_length=10)
