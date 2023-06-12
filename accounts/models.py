@@ -675,6 +675,16 @@ class Task(models.Model):
 
     def __str__(self):
         return self.task
+
+class AssignedTask(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    task = models.CharField(max_length=200)
+    completed = models.BooleanField(default=False, blank=True)
+    belt = models.ForeignKey(Belt, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.task
     
     
 

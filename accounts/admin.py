@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser, Belt, Category, Task, PatientTest, FormQuestion, Progress
+from .models import CustomUser, Belt, Category, Task, PatientTest, FormQuestion, Progress, AssignedTask
 
 
 # Register your models here.
@@ -42,6 +42,7 @@ admin.site.register(CustomUser, CustomUserAdmin)
 #admin.site.register(Task)
 admin.site.register(PatientTest)
 admin.site.register(FormQuestion)
+admin.site.register(AssignedTask)
 
 
 # Need users page
