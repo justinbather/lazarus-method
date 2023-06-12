@@ -317,8 +317,9 @@ def create_belts_and_categories(sender, instance, created, **kwargs):
 def assign_tasks(sender, instance, created, **kwargs):
     if created:
         belt_list = Belt.objects.filter(user=instance)
-        category_list = Category.objects.filter(user=instance)
+        
         for belt_type in belt_list:
+            category_list = Category.objects.filter(belt=belt_type, user=instance)
             for category_type in category_list:
                 tasks = AssignedTask.objects.filter(category=category_type, belt=belt_type)
                 if tasks:
