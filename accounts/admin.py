@@ -40,8 +40,8 @@ class Task(admin.ModelAdmin):
 
 @admin.register(Progress)
 class Progress(admin.ModelAdmin):
-    list_display = ('user')
-    list_filter = ('user')
+    list_display = ('user', 'belt')
+    list_filter = ('user', 'belt')
 
 admin.site.register(CustomUser, CustomUserAdmin)
 #admin.site.register(Task)
