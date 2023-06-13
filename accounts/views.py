@@ -299,7 +299,7 @@ def progress(request):
             'data_final': data_final
         }
         
-
+        print(data_white)
         return render(request, 'progress/progress.html', chartdata)
 
     elif request.user.program == 'Tailored Trailblazer':
