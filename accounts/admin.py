@@ -38,12 +38,17 @@ class Task(admin.ModelAdmin):
     list_display = ('task', 'user', 'belt', 'category')
     list_filter = ('user', 'belt', 'category')
 
+@admin.register(Progress)
+class Progress(admin.ModelAdmin):
+    list_display = ('user')
+    list_filter = ('user')
+
 admin.site.register(CustomUser, CustomUserAdmin)
 #admin.site.register(Task)
 admin.site.register(PatientTest)
 admin.site.register(FormQuestion)
 admin.site.register(AssignedTask)
-admin.site.register(Progress)
+
 
 
 # Need users page
