@@ -832,7 +832,6 @@ def afterbeltform(request):
     if request.POST:
         # Will need to change this to a certain amount of questions else will show too many
         belts = models.Belt.objects.filter(user=request.user).order_by('id')
-        print(belts)
         counter = 0
         for belt in belts:
             if belt.completed == True:
