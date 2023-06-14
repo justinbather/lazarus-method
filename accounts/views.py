@@ -1114,9 +1114,9 @@ def challenge(request):
 def challengetest(request):
     user_belt = current_belt(request)
     task_list = models.Task.objects.filter(category__category_type='Challenge', belt__belt_colour=user_belt, user=request.user)
-    
+    print("Page loaded")
     if request.POST:
-
+        print("form posted")
         checked_tasks = request.POST.getlist("task_complete")
 
         for task_id in checked_tasks:
