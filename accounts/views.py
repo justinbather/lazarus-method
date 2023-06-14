@@ -887,6 +887,9 @@ def wlkthru_continue(request):
 def wlkthru_start(request):
     return render(request, 'walkthrough/start.html')
 
+def wlkthru_results(request):
+    return render(request, 'walkthrough/results.html')
+
 
 
 @login_required
