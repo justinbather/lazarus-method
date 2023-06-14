@@ -37,6 +37,9 @@
     overlay.classList.remove('show');
     });
     </script>
+
+    <script src="../static/js/submitForm.js"></script>
+
         <div class="title">
             <h1>CHALLENGE</h1>
             <h3>What are we checking off today?</h3>
@@ -45,7 +48,7 @@
             <img src="../static/images/ChallengeIcon.svg" alt="Challenge Icon">
         </div>
         <div class="tasks">
-            <form method="post">
+            <form method="post" id="taskform">
                 {% csrf_token %}
             <div class="tasks-container">
                 <ul>
@@ -56,7 +59,7 @@
                         {% if not task.completed %}
                     <li>
                         <label type="checkbox" for="{{task.id}}">
-                            <input type="checkbox" name="task_complete" id="{{ task.id }}" value="{{task.id}}" onChange="this.form.submit()"> 
+                            <input type="checkbox" name="task_complete" id="{{ task.id }}" value="{{task.id}}" onChange="submitForm({{task.id}})"> 
                             {{task.task}} 
                         </label>
                     </li>
