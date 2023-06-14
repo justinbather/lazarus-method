@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="https://unpkg.com/htmx.org@1.9.2" integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h" crossorigin="anonymous"></script>
+
+<body>
+    <link rel="stylesheet" href="../static/newcss/tasks.css">
+    <div class="navbar">
+        <div class="navbar_container">
+            <a class="hamb-icon"><img src="../static/images/icons8-menu-rounded-50.png"/></a>
+            <ul>
+                <li><a href=""><img src="../static/images/ProfileIcon.png" /></a></li>
+                <hr>
+                <li><a href="../home"><img src="../static/images/HomeIcon.png" /></a></li>
+                <hr>
+                <li><a href="../progress"><img src="../static/images/progressicon.png" /></a></li>
+                <hr>
+                <li><a href="../logout"><img src="../static/images/logout.png"></a></li>
+            </ul>
+            <div class="overlay"></div>
+          <a class="exit-icon"><img src="../static/images/icons8-close-window-50.png"/></a>
+        </div>
+    </div>
+    <script>
+    const menuIcon = document.querySelector('.hamb-icon');
+    const exitIcon = document.querySelector('.exit-icon');
+    const navbar = document.querySelector('.navbar_container');
+    const overlay = document.querySelector('.overlay');
+
+    menuIcon.addEventListener('click', () => {
+    navbar.classList.add('show');
+    overlay.classList.add('show');
+    });
+
+    exitIcon.addEventListener('click', () => {
+    navbar.classList.remove('show');
+    overlay.classList.remove('show');
+    });
+    </script>
+        <div class="title">
+            <h1>CHALLENGE</h1>
+            <h3>What are we checking off today?</h3>
+        </div>
+        <div class="hands-picture">
+            <img src="../static/images/ChallengeIcon.svg" alt="Challenge Icon">
+        </div>
+        <div class="tasks">
+            <form method="post">
+                {% csrf_token %}
+            <div class="tasks-container">
+                <ul>
+
+                    
+
+                    {% for task in task_list %}
+                        {% if not task.completed %}
+                    <li>
+                        <label type="checkbox" for="{{task.id}}">
+                            <input type="checkbox" name="task_complete" id="{{ task.id }}" value="{{task.id}}" hx-post="{% url 'challengetest' %}" hx-trigger="click"> 
+                            {{task.task}} 
+                        </label>
+                    </li>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+        </div>
+        <div class="line">
+            <hr>
+        </div>
+        <div class="completed-tasks">
+            <div class="completed-tasks-container">
+                <ul>
+                    {% for task in task_list %}
+                        {% if task.completed %}
+                        <li>
+                            <label type="checkbox" for="{{task.id}}">
+                                <input type="checkbox" name="task_incomplete" id="{{ task.id }}" value="{{task.id}}" hx-post="{% url 'challengetest' %}" hx-trigger="click"> 
+                                {{task.task}} 
+                            </label>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="mark-done-button">
+            <button method="post" name="save">Mark Done</button>
+        </div>
+        </form>
+    </div>
+
+
+   
+</body>
+
+
+{% endblock %}

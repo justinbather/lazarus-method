@@ -1109,6 +1109,38 @@ def challenge(request):
     return render(request, 'task_categories/challenge/challenge.html', {"task_list":task_list})
 
 
+#Testing POST upon checkbox click
+@login_required
+def challengetest(request):
+    user_belt = current_belt(request)
+    task_list = models.Task.objects.filter(category__category_type='Challenge', belt__belt_colour=user_belt, user=request.user)
+    
+    if request.POST:
+
+        checked_tasks = request.POST.getlist("task_complete")
+
+        for task_id in checked_tasks:
+            #task = models.Task.objects.get(request, "task_complete")
+            task = models.Task.objects.get(id=int(task_id))
+            task.completed = True
+            task.save()
+            new_belt = category_completion('Challenge', task.category.id, user_belt, request)
+            if new_belt == True:
+                return redirect('afterbeltform')
+        #Allows users do undo task
+        unchecked_tasks = request.POST.getlist("task_incomplete")
+
+        for task_id in unchecked_tasks:
+            task = models.Task.objects.get(id=int(task_id))
+            task.completed = False
+            task.save()
+            category_completion('Challenge', task.category.id, user_belt, request)
+
+        return redirect('challenge')
+
+    return render(request, 'task_categories/challenge/challenge.html', {"task_list":task_list})
+
+
 @login_required
 def spark(request):
     user_belt = current_belt(request)

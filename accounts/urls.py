@@ -53,6 +53,9 @@ urlpatterns = [
     path('nourish/', views.nourish, name='nourish'),
     path('learn/', views.learn, name='learn'),
     path('challenge/', views.challenge, name='challenge'),
+
+    path('challengetest/', views.challengetest, name='challengetest'),
+
     path('spark/', views.spark, name='spark'),
 
     path('afterbeltform/', views.afterbeltform, name='afterbeltform'),
