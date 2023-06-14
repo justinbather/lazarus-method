@@ -26,6 +26,7 @@ urlpatterns = [
     path('walkthrough/challenge', views.wlkthru_challenge, name='wlkthru_challenge'),
     path('walkthrough/connect', views.wlkthru_connect, name='wlkthru_connect'),
     path('walkthrough/learn', views.wlkthru_learn, name='wlkthru_learn'),
+    path('walkthrough/results', views.wlkthru_results, name='wlkthru_results'),
     path('walkthrough/home', views.wlkthru_home, name='wlkthru_home'),
     path('walkthrough/task', views.wlkthru_task, name='wlkthru_task'),
     path('walkthrough/progress', views.wlkthru_progress, name='wlkthru_progress'),

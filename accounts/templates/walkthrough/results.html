@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<body>
+{% block content %}
+<link rel="stylesheet" href="../static/newcss/welcome.css">
+<div class="main-container">
+    <div class="title">
+        <h1>Your Results</h1>
+        <br>
+        <h4 style="color:#202562;">This insight allows you to observe improvement as you progress in the program. The Lazarus Method adapts with you, providing immediate feedback. 
+            This responsive approach ensures that you receive the most relevant and effective guidance at every stage of your journey.</h4>
+    </div>
+    <div>
+        <img src="../static/images/DrLazarusVectorObjects-09.jpg" style="width: 200px;">
+    </div>
+    <div class="title"> 
+        <h4 style="color:#202562;">Now that you know your baseline results, let’s get started.</h4>
+        <h4 style="color:#202562;">Off to your Personal Dashboard!</h4>
+    </div>
+    
+    <div>
+        <button onclick="location.href = '../walkthrough/home'">Continue</button>
+    </div>
+</div>
+
+{% endblock %}
+</body>

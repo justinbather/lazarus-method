@@ -781,7 +781,7 @@ def onboarding7(request):
         user.save()
 
         
-        return redirect('onboarding_results')
+        return redirect('wlkthru_start')
 
     return render(request, 'onboarding/onboarding7.html', {"question_list":question_list})
 
