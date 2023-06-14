@@ -56,7 +56,7 @@
                         {% if not task.completed %}
                     <li>
                         <label type="checkbox" for="{{task.id}}">
-                            <input type="checkbox" name="task_complete" id="{{ task.id }}" value="{{task.id}}" hx-post="{% url 'challengetest' %}" hx-trigger="click"> 
+                            <input type="checkbox" name="task_complete" id="{{ task.id }}" value="{{task.id}}" onChange="this.form.submit()"> 
                             {{task.task}} 
                         </label>
                     </li>
