@@ -37,9 +37,8 @@
     </script>
         <div class="title">
             <h1>SPARK</h1>
-            <h4 style="color:#202562;">Click the task below, it will turn blue.</h4>
+            <h4 style="color:#202562;">Select the task and press mark done to check it off</h4>
             <br>
-            <h4 style="color:#202562;">Now click 'Mark Done' to complete the task.</h4>
             <h4 style="color:#202562;">Note: You can undo a task by clicking it again and pressing mark done!</h4>
             <h4 style="color:#FFF;">Press Continue when done</h4>
         </div>
@@ -58,7 +57,7 @@
                     <li>
                         <label type="checkbox" for="{{task.id}}">
                             <input type="checkbox" name="task_complete" id="{{ task.id }}" value="{{task.id}}"> 
-                            {{task.task}}
+                            Check me off
                         </label>
                     </li>
 
@@ -78,7 +77,7 @@
                         <li>
                             <label type="checkbox" for="{{task.id}}">
                                 <input type="checkbox" name="task_incomplete" id="{{ task.id }}" value="{{task.id}}"> 
-                                {{task.task}}
+                                Completed
                             </label>
                         </li>
                         {% endif %}
