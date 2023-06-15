@@ -78,7 +78,7 @@
             <div class="completed-tasks-container">
                 <ul>
                     {% for task in task_list %}
-                        {% if not task.completed %}
+                        {% if task.completed %}
                         <li>
                             <label type="checkbox" for="{{task.id}}">
                                 <input type="checkbox" name="task_incomplete" id="{{ task.id }}" value="{{task.id}}"> 
