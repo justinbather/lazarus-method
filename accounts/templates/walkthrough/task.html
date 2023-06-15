@@ -92,7 +92,7 @@
             </div>
         </div>
        
-        {% if task.completed == False in task_list%}
+        {% if not task.completed %}
         <div class="mark-done-button">
             <button method="post" name="save">Mark Done</button>
         </div>
@@ -100,7 +100,7 @@
        
         
         </form>
-        {% if task.completed == True in task_list %}
+        {% if task.completed %}
         <div class="mark-done-button">
             <button onclick="location.href = './progress'">Continue</button>
         </div>
