@@ -45,6 +45,8 @@
         <div class="hands-picture">
             <img src="../static/images/SparkIcon.svg" alt="Spark Icon">
         </div>
+
+        <br>
         <div class="tasks">
 
             
@@ -89,15 +91,18 @@
                 
             </div>
         </div>
-        
+        {% if task not in task.completed %}
         <div class="mark-done-button">
             <button method="post" name="save">Mark Done</button>
         </div>
-        </form>
+        {% endif %}
         
+        </form>
+        {% if task in task.completed %}
         <div class="mark-done-button">
             <button onclick="location.href = './progress'">Continue</button>
         </div>
+        {% endif %}
     </div>
 
 
