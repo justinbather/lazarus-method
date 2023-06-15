@@ -37,7 +37,7 @@
     </script>
         <div class="title">
             <h1>SPARK</h1>
-            <h4 style="color:#202562;">Select the task and press mark done to check it off</h4>
+            <h4 style="color:#202562; margin-bottom: 5px;">Select the task and press mark done to check it off</h4>
             
             <p style="color:#202562;">Note: You can undo a task by clicking it again and pressing mark done!</p>
             
@@ -91,6 +91,8 @@
                 
             </div>
         </div>
+
+        <!--Dynamically change buttons if task has been checked off or not-->
        {% for task in task_list %}
         {% if not task.completed %}
         <div class="mark-done-button">
