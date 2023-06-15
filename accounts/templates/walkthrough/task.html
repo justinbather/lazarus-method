@@ -91,6 +91,7 @@
                 
             </div>
         </div>
+        {% for task in task_list %}
         {% if task not in task.completed %}
         <div class="mark-done-button">
             <button method="post" name="save">Mark Done</button>
@@ -104,7 +105,7 @@
         </div>
         {% endif %}
     </div>
-
+        {{% endfor %}}
 
    
 </body>
