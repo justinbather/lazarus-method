@@ -78,7 +78,7 @@
             <div class="completed-tasks-container">
                 <ul>
                     {% for task in task_list %}
-                        {% if task.completed %}
+                        {% if not task.completed %}
                         <li>
                             <label type="checkbox" for="{{task.id}}">
                                 <input type="checkbox" name="task_incomplete" id="{{ task.id }}" value="{{task.id}}"> 
@@ -92,14 +92,14 @@
             </div>
         </div>
         {% for task in task_list %}
-        {% if task not in task.completed %}
+        {% if task.completed %}
         <div class="mark-done-button">
             <button method="post" name="save">Mark Done</button>
         </div>
         {% endif %}
         
         </form>
-        {% if task in task.completed %}
+        {% if task.completed %}
         <div class="mark-done-button">
             <button onclick="location.href = './progress'">Continue</button>
         </div>
