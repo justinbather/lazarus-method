@@ -1203,6 +1203,11 @@ def learn(request):
 def tnr(request):
     return render(request, 'walkthrough/tnr.html')
 
+def bookman(request):
+    return render(request, 'walkthrough/bookman.html')
+
+
+
 
 
                 
