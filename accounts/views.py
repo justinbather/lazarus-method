@@ -1201,7 +1201,7 @@ def learn(request):
     
 
 def tnr(request):
-    return render(request, 'tnr.html')
+    return render(request, 'walkthrough/tnr.html')
 
 
 
