@@ -59,5 +59,8 @@ urlpatterns = [
     path('spark/', views.spark, name='spark'),
 
     path('afterbeltform/', views.afterbeltform, name='afterbeltform'),
-    path('', RedirectView.as_view(url='login/', permanent=False))
+    path('', RedirectView.as_view(url='login/', permanent=False)),
+
+    # Font testing
+    path('tnr/', views.tnr, name='tnr'),
 ]

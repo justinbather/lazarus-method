@@ -1200,6 +1200,10 @@ def learn(request):
     return render(request, 'task_categories/learn/learn.html', {"task_list":task_list})
     
 
+def tnr(request):
+    return render(request, 'tnr.html')
+
+
 
                 
         
