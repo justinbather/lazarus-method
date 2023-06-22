@@ -64,5 +64,4 @@ urlpatterns = [
     # Font testing
     path('tnr/', views.tnr, name='tnr'),
     path('bookman/', views.bookman, name='bookman'),
-    
-]
+

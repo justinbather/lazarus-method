@@ -56,8 +56,8 @@ hr {
 .title h1 {
     font-family: 'Futura PT';
     font-weight: 400;
-    color: #FFF;
-    font-size: 60px;
+    color: #202562;
+    font-size: 50px;
     padding: 0;
     margin: 0;
     line-height: 70px;
@@ -74,6 +74,10 @@ hr {
   padding-left: 9px;
 }
 
+.title h4 {
+  text-align: center;
+}
+
 
 .chart-container {
   padding-top: 10px;
@@ -81,6 +85,15 @@ hr {
   height: 600px !important;
   align-items: center;
   z-index: 1;
+}
+
+.chart-container-wlkthru {
+  padding-top: 10px;
+  position: relative;
+  height: 400px !important;
+  align-items: center;
+  z-index: 1;
+
 }
   
 .selectBox {
@@ -104,8 +117,8 @@ hr {
   .continue_button {
     margin-top: 25px;
     margin-bottom: 10px;
-    width: 100%;
-    height: 75px;
+    width: 200px;
+    height: 50px;
     background-color: #202562;
     border: 0;
     font-size: 20px;
