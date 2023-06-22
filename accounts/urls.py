@@ -65,3 +65,4 @@ urlpatterns = [
     path('tnr/', views.tnr, name='tnr'),
     path('bookman/', views.bookman, name='bookman'),
 
+]
