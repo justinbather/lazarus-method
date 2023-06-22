@@ -2,38 +2,7 @@
 
 {% block content %}
 <link rel="stylesheet" href="../static/newcss/progress.css">
-    <div class="navbar">
-        <div class="navbar_container">
-            <a class="hamb-icon"><img src="../static/images/icons8-menu-rounded-50.png"/></a>
-            <ul>
-                <li><a href=""><img src="../static/images/ProfileIcon.png" /></a></li>
-                <hr>
-                <li><a href="../home"><img src="../static/images/HomeIcon.png" /></a></li>
-                <hr>
-                <li><a href="../progress"><img src="../static/images/progressicon.png" /></a></li>
-                <hr>
-                <li><a href="../logout"><img src="../static/images/logout.png"></a></li>
-            </ul>
-            <div class="overlay"></div>
-          <a class="exit-icon"><img src="../static/images/icons8-close-window-50.png"/></a>
-        </div>
-    </div>
-    <script>
-    const menuIcon = document.querySelector('.hamb-icon');
-    const exitIcon = document.querySelector('.exit-icon');
-    const navbar = document.querySelector('.navbar_container');
-    const overlay = document.querySelector('.overlay');
-
-    menuIcon.addEventListener('click', () => {
-    navbar.classList.add('show');
-    overlay.classList.add('show');
-    });
-
-    exitIcon.addEventListener('click', () => {
-    navbar.classList.remove('show');
-    overlay.classList.remove('show');
-    });
-    </script>
+{% include 'navbar.html %}
   <div class="title">
       <h1 style="z-index:-999;">PROGRESS</h1>
       <h3>Category scores are updated after each belt.</h3>
