@@ -5,6 +5,7 @@ body {
 }
 
 .main-container {
+    font-family: 'EB Garamond';
     display: flex;
     align-content: center;
     padding-right: 100px;
@@ -17,9 +18,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
 }
 
 .main-container h1 {
+    font-family: 'Balthazar';
     font-size: 3rem;
     font-weight: 400;
     color: #202562;
@@ -28,6 +31,7 @@ body {
     overflow: hidden;
     white-space:normal;
     text-overflow: ellipsis;
+    
 }
 
 .main-container h3 {
