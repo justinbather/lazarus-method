@@ -91,7 +91,7 @@ def create_onboarding_form(sender, instance, created, **kwargs):
         MCFormQuestion.objects.create(user=instance, question="Would you consider yourself to be curious and interested in new topics or concepts?", answer=1, category='Learn')
         MCFormQuestion.objects.create(user=instance, question="Have you purposefully addressed any of your fears?", answer=1, category='Challenge')
         MCFormQuestion.objects.create(user=instance, question="Do you currently have a high level of excitement and motivation?", answer=1, category='Spark')
-"""
+
 @receiver(post_save, sender=CustomUser)
 def create_user_tasks(sender, instance, created, **kwargs):
     if created:
@@ -291,8 +291,8 @@ def create_user_tasks(sender, instance, created, **kwargs):
         user_category = Category.objects.get(category_type='Challenge', belt=user_belt, user=instance)
         Task.objects.create(category=user_category, belt=user_belt, completed=False, task='Use one day with the clear intention of sending good vibes to every person you come in contact with including strangers', user=instance)
         Task.objects.create(category=user_category, belt=user_belt, completed=False, task='Identify a day to attempt to fast for the entire day', user=instance)
-"""
 
+"""
 @receiver(post_save, sender=CustomUser)
 def create_belts_and_categories(sender, instance, created, **kwargs):
     if created:
@@ -325,3 +325,4 @@ def assign_tasks(sender, instance, created, **kwargs):
                 if tasks:
                     for item in tasks:
                         Task.objects.create(category=category_type, belt=belt_type, completed=False, user=instance, task=item)
+"""
