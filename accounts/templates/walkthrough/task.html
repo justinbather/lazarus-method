@@ -3,7 +3,7 @@
 {% block content %}
 <body>
     <link rel="stylesheet" href="../static/newcss/tasks.css">
-        <div class="title">
+        <div class="title" style="padding-left: 0px;">
             <h1>SPARK</h1>
             <h4 style="color:#202562; margin-bottom: 5px;">Select the task and press mark done to check it off</h4>
             
@@ -13,7 +13,7 @@
         </div>
 
         <br>
-        <div class="tasks">
+        <div class="tasks" style="padding-left: 0px;">
 
             
             <form method="post">
@@ -34,13 +34,13 @@
                     {% endfor %}
             </div>
         </div>
-        <div class="title">
+        <div class="title" style="padding-left: 0px;">
         <h4 style="color:#FFF;">Press Continue when done</h4>
         </div>
         <div class="line">
             <hr>
         </div>
-        <div class="completed-tasks">
+        <div class="completed-tasks" style="padding-left: 0px;">
             <div class="completed-tasks-container">
                 <ul>
                     {% for task in task_list %}
@@ -61,7 +61,7 @@
         <!--Dynamically change buttons if task has been checked off or not-->
        {% for task in task_list %}
         {% if not task.completed %}
-        <div class="mark-done-button">
+        <div class="mark-done-button" style="padding-left: 0px;">
             <button method="post" name="save">Mark Done</button>
         </div>
         {% endif %}
@@ -69,7 +69,7 @@
         
         </form>
         {% if task.completed %}
-        <div class="mark-done-button">
+        <div class="mark-done-button" style="padding-left: 0px;">
             <button onclick="location.href = './progress'">Continue</button>
         </div>
         {% endif %}
